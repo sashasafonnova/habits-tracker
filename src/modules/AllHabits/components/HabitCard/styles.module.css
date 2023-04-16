@@ -1,0 +1,58 @@
+.item {
+   padding: 30px;
+   background-color: var(--login--bg);
+   border: 1px solid var(--item-border);
+   border-radius: 10px;
+   font-size: 16px;
+}
+
+
+.category, .progress {
+   display: flex;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+
+
+.categoryIcon, .progressIcon {
+   margin-right: 10px;
+}
+
+
+
+.title {
+   font-weight: 600;
+   font-size: 22px;
+   margin-bottom: 30px;
+   line-height: 1.2;
+}
+
+
+.lastCheck {
+   margin-bottom: 30px;
+}
+
+
+
+.lastCheck span {
+   font-weight: 600;
+}
+
+
+
+.btnCheck {
+   padding: 15px 30px;
+   border-radius: 6px;
+   background-color: #fff;
+   color: var(--decor-color-1);
+   border: 1px solid var(--item-border);
+   font-weight: 600;
+}
+
+
+.btnCheck:hover {
+   background-color: var(--decor-color-1);
+   color: #fff;
+   border-color: var(--decor-color-1);
+}

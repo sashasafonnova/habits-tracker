@@ -1,0 +1,60 @@
+.info {
+   padding: 40px 40px;
+   background-color: var(--login--bg);
+   margin-bottom: 30px;
+}
+
+
+.category,
+.progress {
+   display: flex;
+   align-items: center;
+   margin-bottom: 30px;
+}
+
+
+
+.categoryIcon,
+.progressIcon {
+   margin-right: 10px;
+}
+
+
+
+.title {
+   font-weight: 600;
+   font-size: 26px;
+   margin-bottom: 30px;
+   line-height: 1.2;
+}
+
+
+
+.start {
+   margin-bottom: 30px;
+}
+
+.start span {
+   font-weight: 600;
+}
+
+
+
+
+.lastCheck span {
+   font-weight: 600;
+}
+
+
+
+.btnCheck {
+   display: block;
+   font-size: 16px;
+   padding: 15px 30px;
+   border-radius: 6px;
+   background-color: var(--decor-color-1);
+   color: #fff;
+   font-weight: 600;
+   margin-bottom: 40px;
+}
+

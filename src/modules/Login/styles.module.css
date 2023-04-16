@@ -1,0 +1,9 @@
+.section {
+   background-color: var(--login--bg);
+   min-height: 600px;
+}
+
+
+.content {
+   padding: 60px 0px 100px;
+}

@@ -1,0 +1,10 @@
+.footer {
+   padding: 57px 0px 72px;
+   background-color: var(--footer-bg);
+}
+
+
+.btn {
+   color: #fff;
+   background: transparent;
+}

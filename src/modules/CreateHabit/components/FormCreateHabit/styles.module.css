@@ -1,0 +1,90 @@
+
+.category {
+   max-width: 350px;
+   position: relative;
+}
+
+
+.categoryBtn  {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   background: transparent;
+   padding: 10px 20px;
+   border: 1px solid var(--item-border);
+   border-radius: 6px;
+   min-height: 50px;
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+
+.categoryList {
+   display: none;
+   position: absolute;
+   top: 55px;
+   left: 0;
+   background-color: #fff;
+   overflow-y: auto;
+   min-width: 350px;
+   height: 130px;
+   padding: 10px 20px;
+   border: 1px solid var(--item-border);
+   border-radius: 6px;
+}
+
+
+
+.name {
+   max-width: 350px;
+}
+
+.inputName {
+   padding: 10px 20px;
+   border: 1px solid var(--item-border);
+   border-radius: 6px;
+   width: 100%;
+   min-height: 120px;
+   margin-bottom: 10px;
+}
+
+
+
+.inputName::placeholder {
+   font-size: 18px;
+   color: inherit;
+}
+
+
+
+.daysLabel {
+   padding: 0px 20px;
+   margin-bottom: 10px;
+}
+
+
+
+.days {
+   display: inline-grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 10px;
+   margin-bottom: 30px;
+}
+
+
+.btnSubmit {
+   display: block;
+   padding: 15px 30px;
+   border-radius: 6px;
+   background-color: var(--decor-color-1);
+   color: #fff;
+   font-weight: 600;
+}
+
+
+
+ @media (max-width: 480px) {
+   .inputName::placeholder {
+       font-size: 14px;
+    }
+}
