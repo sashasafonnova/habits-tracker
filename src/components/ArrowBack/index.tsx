@@ -7,14 +7,12 @@ import styles from "./styles.module.css";
 const ArrowBack: React.FC = () => {
 
    // const navigate = useNavigate();
+   // onClick={() => navigate(-1)}
 
+
+   
    return (
-      <div>
-         <div className="container">
-            <button className={styles.goBack}>← Назад</button>
-      {/* // <button className={styles.goBack} onClick={() => navigate(-1)}>← Назад</button> */}
-         </div>
-      </div>
+      <button className={styles.goBack}>← Назад</button>
    );
 }
 

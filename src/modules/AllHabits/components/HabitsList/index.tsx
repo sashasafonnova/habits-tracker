@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import HabitCard from '../HabitCard';
 
 
-const HabitsList: React.FC = () => {
+export const HabitsList: React.FC = () => {
    return (
       <div className={styles.list}>
          <HabitCard />
@@ -16,4 +16,3 @@ const HabitsList: React.FC = () => {
    );
 }
 
-export default HabitsList;

@@ -1,12 +1,21 @@
 import React from 'react';
 
-import AllHabits from '../modules/AllHabits';
+import BlockContainer from '../components/BlockContainer';
+import BlockTitle from '../components/BlockTitle';
+import { HabitsList } from '../modules/AllHabits';
 
 
 const HabitsPage: React.FC = () => {
    return (
       <>
-         <AllHabits />
+         <BlockContainer>
+            <BlockTitle title={"Мои привычки"} />
+         </BlockContainer>
+
+         <BlockContainer>   
+            <HabitsList/>
+         </BlockContainer>
+
       </>
    );
 }

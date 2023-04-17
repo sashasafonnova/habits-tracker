@@ -1,27 +1,40 @@
 import React from 'react';
 import styles from "./styles.module.css";
 
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux-hooks';
+import { openCategoryList } from '../../index';
 
 
 
-const FormCreateHabit: React.FC = () => {
+
+export const FormCreateHabit: React.FC = () => {
+
+   
+   const categoryListIsOpen = useAppSelector(state => state.createHabitReducer.categoryList.isOpen);
+   const dispatch = useAppDispatch();
+
+
+   console.log(categoryListIsOpen)
+
    return (
-      <form>
-         <div className={styles.category} >
-            <button className={styles.categoryBtn}>Выбрать категорию</button>
-            <ul className={styles.categoryList}>
-               <li>Здоровье</li>
-               <li>Работа</li>
-               <li>Дом</li>
-               <li>Дом</li>
-               <li>Дом</li>
-               <li>Дом</li>
-               <li>Дом</li>
-            </ul>
+      <form className={styles.form}>
+         <div className={styles.category}>
+            <div className={styles.categoryBtn} onClick={() => dispatch(openCategoryList(!categoryListIsOpen))}>Выбрать категорию</div>
+            {categoryListIsOpen && (                                                                                                                                                                                                                                                                                                                                                                                                                         
+               <ul className={styles.categoryList}>
+                  <li>Здоровье</li>
+                  <li>Работа</li>
+                  <li>Дом</li>
+                  <li>Дом</li>
+                  <li>Дом</li>
+                  <li>Дом</li>
+                  <li>Дом</li>
+               </ul>)}
          </div>
          <div className={styles.name}>
             <label className="dsp-none" htmlFor="habitName"></label>
             <textarea 
+               onClick={() => console.log("categoryListIsOpen")}
                className={styles.inputName}
                id="habitName" 
                placeholder="Что будем делать?"/>
@@ -41,5 +54,3 @@ const FormCreateHabit: React.FC = () => {
       </form>
    );
 }
-
-export default FormCreateHabit;

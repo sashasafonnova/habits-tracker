@@ -5,9 +5,9 @@ import ProfileBtns from '../../UI/ProfileBtns';
 
 
 
-const HabitProfile: React.FC = () => {
+export const HabitProfile: React.FC = () => {
    return (
-      <div>
+      <div className={styles.block}>
          <div className={styles.info}>
             <div className={styles.category}>
                <svg className={styles.categoryIcon} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,4 +34,3 @@ const HabitProfile: React.FC = () => {
    );
 }
 
-export default HabitProfile;

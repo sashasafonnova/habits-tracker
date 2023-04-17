@@ -1,11 +1,14 @@
 import React from 'react';
-import Login from '../modules/Login';
+import { LoginContent } from '../modules/Login';
+import BlockContainer from '../components/BlockContainer';
 
 
 const LoginPage: React.FC = () => {
    return (
       <>
-         <Login />
+         <BlockContainer style="login">
+               <LoginContent />
+         </BlockContainer>
       </>
    );
 }

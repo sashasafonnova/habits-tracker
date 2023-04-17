@@ -7,6 +7,7 @@ import Footer from './modules/Footer';
 import CreateHabitPage from './pages/CreateHabitPage';
 
 
+
 const App: React.FC = () => {
   return (
     <div className="App">

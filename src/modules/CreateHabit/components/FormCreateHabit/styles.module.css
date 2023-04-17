@@ -1,3 +1,8 @@
+.form {
+   padding: 0px 0px 100px;
+}
+
+
 
 .category {
    max-width: 350px;
@@ -19,15 +24,15 @@
 }
 
 
+
 .categoryList {
-   display: none;
    position: absolute;
    top: 55px;
    left: 0;
-   background-color: #fff;
+   background-color: var(--login--bg);
    overflow-y: auto;
    min-width: 350px;
-   height: 130px;
+   height: 100px;
    padding: 10px 20px;
    border: 1px solid var(--item-border);
    border-radius: 6px;
