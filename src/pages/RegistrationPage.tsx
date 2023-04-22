@@ -1,7 +1,9 @@
 import React from 'react';
-import { FormSignIn } from '../modules/Login';
+
 import BlockContainer from '../components/BlockContainer';
+import { FormSignUp } from '../modules/Registration';
 import ArrowBack from '../components/ArrowBack';
+
 
 
 const LoginPage: React.FC = () => {
@@ -11,10 +13,11 @@ const LoginPage: React.FC = () => {
          <BlockContainer style="bg-colorful">
             <ArrowBack />
          </BlockContainer>
-
+         
          <BlockContainer style="bg-colorful">
-            <FormSignIn />
+            <FormSignUp />
          </BlockContainer>
+
       </>
    );
 }

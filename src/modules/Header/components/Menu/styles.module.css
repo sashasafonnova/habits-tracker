@@ -1,0 +1,86 @@
+.section {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: rgba(255, 255, 255, 0.8);
+   display: flex;
+   justify-content: flex-end;
+}
+
+
+.content {
+   flex: 0 1 400px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   height: 100%;
+   background-color: var(--login--bg);
+   padding: 60px 30px;
+}
+
+
+.userData {
+   margin-bottom: 50px;
+}
+
+.userName {
+   font-weight: 600;
+}
+
+.userEmail {
+   font-style: italic;
+}
+
+
+.nav {
+   height: 100%;
+   position: relative;
+}
+
+
+.action:not(:last-child) {
+   margin-bottom: 5px;
+}
+
+
+.link {
+   color: inherit;
+}
+
+
+.closeMenu {
+   background: transparent;
+   padding: 10px;
+   position: absolute;
+   top: 20px;
+   right: 30px;
+}
+
+
+
+.logOut {
+   position: absolute;
+   bottom: 0px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   
+}
+
+
+.logOutBtn {
+   background: transparent;
+   text-decoration: underline;
+   color: inherit;
+}
+
+
+@media (max-width: 480px) {
+   .content {
+      flex: 1 1 300px;
+   }
+   
+}

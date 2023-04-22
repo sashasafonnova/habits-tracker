@@ -1,15 +1,13 @@
 import React from 'react';
 import styles from "./styles.module.css";
+import HaveAccount from '../../../../components/HaveAccount';
 
 
-interface FormSignUpProps {
-   setTypeForm: (typeForm: string) => void;
-}
 
 
-const FormSignUp: React.FC<FormSignUpProps> = ({ setTypeForm }) => {
+export const FormSignUp: React.FC = () => {
    return (
-      <div>
+      <div className={styles.content}>
          <h1 className={styles.title}>Регистрация</h1>
          <p className={styles.subtitle}>Введите данные для входа</p>
          <form>
@@ -41,13 +39,13 @@ const FormSignUp: React.FC<FormSignUpProps> = ({ setTypeForm }) => {
                />
             </div>
             <div className={styles.btns}>
-               <button className={styles.btnSubmit}>Отправить</button>
-               <button className={styles.btnSignIn} onClick={() => setTypeForm("signIn")}>Войти</button>
+               <button className={styles.btnSubmit}>Создать аккаунт</button>
             </div>
             
          </form> 
+         <HaveAccount text='Уже есть аккаунт?' action='Войти' path='/login' />
+
       </div>       
    );
 }
 
-export default FormSignUp;

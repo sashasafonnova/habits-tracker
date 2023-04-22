@@ -1,26 +1,20 @@
 import React from 'react';
 import styles from "./styles.module.css";
 
-import { useAppDispatch, useAppSelector } from '../../../../hooks/redux-hooks';
-import { openCategoryList } from '../../index';
-
-
 
 
 export const FormCreateHabit: React.FC = () => {
 
    
-   const categoryListIsOpen = useAppSelector(state => state.createHabitReducer.categoryList.isOpen);
-   const dispatch = useAppDispatch();
+   const [openCategory, setOpenCategory] = React.useState(false);
 
 
-   console.log(categoryListIsOpen)
 
    return (
       <form className={styles.form}>
          <div className={styles.category}>
-            <div className={styles.categoryBtn} onClick={() => dispatch(openCategoryList(!categoryListIsOpen))}>Выбрать категорию</div>
-            {categoryListIsOpen && (                                                                                                                                                                                                                                                                                                                                                                                                                         
+            <div className={styles.categoryBtn} onClick={() => setOpenCategory(!openCategory)}>Выбрать категорию</div>
+            {openCategory && (                                                                                                                                                                                                                                                                                                                                                                                                                         
                <ul className={styles.categoryList}>
                   <li>Здоровье</li>
                   <li>Работа</li>

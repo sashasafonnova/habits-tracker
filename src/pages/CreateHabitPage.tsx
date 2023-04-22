@@ -19,7 +19,7 @@ const CreateHabitPage: React.FC = () => {
          <BlockContainer>
             <BlockTitle title={"Создать привычку"} />
          </BlockContainer>  
-         
+
          <BlockContainer>
             <FormCreateHabit/>
          </BlockContainer>

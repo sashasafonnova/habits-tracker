@@ -1,0 +1,52 @@
+.content {
+   min-height: 700px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+}
+
+
+.title {
+   font-size: 38px;
+   font-weight: 600;
+   margin-bottom: 20px;
+   max-width: 800px;
+}
+
+
+
+
+.subtitle {
+   margin-bottom: 50px;
+   max-width: 450px;
+}
+
+
+
+
+.btnSignUp {
+   padding: 15px 30px;
+   border-radius: 6px;
+   background-color: var(--decor-color-1);
+   color: #fff;
+   font-weight: 600;
+}
+
+
+
+
+@media (max-width: 660px){
+   .title {
+      font-size: 34px;
+   }
+}
+
+
+@media (max-width: 480px) {
+   .title {
+      font-size: 30px;
+   }
+}
+
+

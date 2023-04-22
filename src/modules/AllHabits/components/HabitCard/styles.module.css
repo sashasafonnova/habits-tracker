@@ -1,7 +1,6 @@
 .item {
    padding: 30px;
-   background-color: var(--login--bg);
-   border: 1px solid var(--item-border);
+   box-shadow: rgba(0, 30, 43, 0.2) 2px 4px 14px -4px;
    border-radius: 10px;
    font-size: 16px;
 }

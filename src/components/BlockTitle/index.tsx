@@ -6,7 +6,8 @@ type BlockTitleProps = {
    title: string;
 }
 
-const BlockTitle: React.FC<BlockTitleProps> = ( {title} ) => {
+const BlockTitle: React.FC<BlockTitleProps> = ( {title}) => {
+
 
 
    return (
