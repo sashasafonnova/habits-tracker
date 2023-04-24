@@ -7,4 +7,11 @@
 .btn {
    color: #fff;
    background: transparent;
+   margin-bottom: 20px;
+}
+
+
+.copyrigth {
+   color: #fff;
+   font-size: 14px;
 }

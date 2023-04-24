@@ -8,6 +8,7 @@ const Footer: React.FC = () => {
             <div className="container">
                <div>
                   <button className={styles.btn}>Сообщить о проблеме</button>
+               <p className={styles.copyrigth}>© HabitsTracker, 2023</p>
                </div>
             </div>
          </footer>

@@ -1,0 +1,31 @@
+.container {
+   padding: 0px 0px 30px;
+}
+
+.link {
+   padding: 10px 0px;
+   display: inline-block;
+}
+
+
+.icon {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 30px;
+   height: 30px;
+   margin-right: 10px;
+   border-radius: 50%;
+   background-color: var(--item-border);
+   color: #fff;
+   font-weight: 700;
+}
+
+
+.link:hover .icon {
+   background-color: var(--decor-color-1);
+}
+
+.link:hover .text {
+   text-decoration: underline;
+}

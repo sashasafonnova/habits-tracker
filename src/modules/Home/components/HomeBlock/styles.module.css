@@ -9,9 +9,14 @@
 
 .title {
    font-size: 38px;
-   font-weight: 600;
+   font-weight: 700;
    margin-bottom: 20px;
    max-width: 800px;
+}
+
+
+.title span {
+   color: var(--text-color);
 }
 
 
@@ -38,14 +43,14 @@
 
 @media (max-width: 660px){
    .title {
-      font-size: 34px;
+      font-size: 35px;
    }
 }
 
 
 @media (max-width: 480px) {
    .title {
-      font-size: 30px;
+      font-size: 28px;
    }
 }
 

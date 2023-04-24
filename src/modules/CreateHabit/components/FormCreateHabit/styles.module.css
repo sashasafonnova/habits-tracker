@@ -5,12 +5,12 @@
 
 
 .category {
-   max-width: 350px;
    position: relative;
 }
 
 
 .categoryBtn  {
+   cursor: pointer;
    display: flex;
    align-items: center;
    justify-content: flex-start;
@@ -19,7 +19,7 @@
    border: 1px solid var(--item-border);
    border-radius: 6px;
    min-height: 50px;
-   width: 100%;
+   width: 350px;
    margin-bottom: 20px;
 }
 
@@ -29,13 +29,34 @@
    position: absolute;
    top: 55px;
    left: 0;
-   background-color: var(--login--bg);
+   background-color: #F5F5F5;
    overflow-y: auto;
-   min-width: 350px;
-   height: 100px;
+   width: 350px;
+   height: 210px;
    padding: 10px 20px;
    border: 1px solid var(--item-border);
    border-radius: 6px;
+}
+
+
+
+.categoryItem {
+   display: flex;
+   align-items: center;
+   font-size: 16px;
+   cursor: pointer;
+}
+
+
+.categoryItem:not(:last-child) {
+   margin-bottom: 10px;
+}
+
+
+.categoryIcon {
+   margin-right: 20px;
+   width: 20px;
+   height: 20px;
 }
 
 
@@ -48,7 +69,7 @@
    padding: 10px 20px;
    border: 1px solid var(--item-border);
    border-radius: 6px;
-   width: 100%;
+   width: 350px;
    min-height: 120px;
    margin-bottom: 10px;
 }
@@ -93,3 +114,11 @@
        font-size: 14px;
     }
 }
+
+
+
+ @media (max-width: 380px) {
+    .categoryBtn, .inputName, .categoryList {
+      width: 270px;
+    }
+ }

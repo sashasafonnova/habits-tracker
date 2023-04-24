@@ -5,6 +5,12 @@ import ArrowBack from '../components/ArrowBack';
 
 
 const LoginPage: React.FC = () => {
+
+   React.useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
+
+
    return (
       <>
 

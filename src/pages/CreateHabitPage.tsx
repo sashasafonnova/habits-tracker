@@ -10,6 +10,12 @@ import { FormCreateHabit }  from '../modules/CreateHabit';
 
 
 const CreateHabitPage: React.FC = () => {
+
+   React.useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
+
+
    return (
       <>
          <BlockContainer>

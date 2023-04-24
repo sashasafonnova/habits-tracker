@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { Link } from 'react-router-dom';
 
 
+
 interface MenuProps {
    setMenuOpen: (menuOpen: boolean) => void;
 }
@@ -22,6 +23,7 @@ export const Menu: React.FC<MenuProps> = ({ setMenuOpen } ) => {
             </div>
             <nav className={styles.nav}>
                <ul className={styles.actions}>
+
                   <li className={styles.action} onClick={() => setMenuOpen(false)}>
                      <Link to='./create' className={styles.link}>Создать привычку</Link>
                   </li>
