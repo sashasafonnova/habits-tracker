@@ -12,15 +12,13 @@ const LoginPage: React.FC = () => {
       window.scrollTo(0, 0);
    }, []);
 
-
-
+   
    return (
       <>
-
          <BlockContainer style="bg-colorful">
             <ArrowBack />
          </BlockContainer>
-         
+
          <BlockContainer style="bg-colorful">
             <FormSignUp />
          </BlockContainer>

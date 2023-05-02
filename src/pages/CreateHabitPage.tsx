@@ -8,7 +8,6 @@ import { FormCreateHabit }  from '../modules/CreateHabit';
 
 
 
-
 const CreateHabitPage: React.FC = () => {
 
    React.useEffect(() => {
@@ -29,6 +28,7 @@ const CreateHabitPage: React.FC = () => {
          <BlockContainer>
             <FormCreateHabit/>
          </BlockContainer>
+
       </>
    );
 }

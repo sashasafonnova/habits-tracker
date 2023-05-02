@@ -9,6 +9,7 @@ type BlockContainerProps = {
 
 const BlockContainer: React.FC<BlockContainerProps> = ( {children, style} ) => {
 
+
    return (
       <div className={style}>
          <div className="container">

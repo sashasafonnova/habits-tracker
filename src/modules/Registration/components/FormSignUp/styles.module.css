@@ -19,12 +19,23 @@
 }
 
 
+.inputContainer {
+   position: relative;
+}
+
+
+
 .input {
    padding: 16px;
    background-color: #fff;
    border-radius: 6px;
-   margin-bottom: 20px;
+   margin-bottom: 24px;
    min-width: 340px;
+}
+
+
+.inputError, .inputError:focus {
+   border: 1px solid red;
 }
 
 
@@ -57,6 +68,21 @@
 
 
 
+.error {
+   position: absolute;
+   bottom: 6px;
+   left: 16px;
+   color: red;
+   font-size: 10px;
+}
+
+
+.fetchError {
+   color: red;
+}
+
+
+
 
 @media (max-width: 480px) {
    .input {
@@ -67,18 +93,9 @@
 
 
 @media (max-width: 380px) {
-   /* .btns {
-      flex-direction: column;
-      align-items: flex-start;
-   } */
-
 
    .btnSubmit {
       margin-bottom: 5px;
    }
 
-   /* .btnSignIn {
-      background: transparent;
-      padding: 15px 20px 15px 0px;
-   } */
 }

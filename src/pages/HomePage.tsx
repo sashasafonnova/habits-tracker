@@ -4,8 +4,6 @@ import {HomeBlock } from '../modules/Home';
 
 
 
-
-
 const HomePage: React.FC = () => {
 
    React.useEffect(() => {
@@ -13,9 +11,10 @@ const HomePage: React.FC = () => {
    }, []);
 
 
+
    return (
       <>
-         <BlockContainer style={"bg-colorful"}>
+         <BlockContainer style="bg-colorful">
             <HomeBlock />
          </BlockContainer> 
          

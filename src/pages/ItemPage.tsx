@@ -5,6 +5,7 @@ import ArrowBack from '../components/ArrowBack';
 import BlockContainer from '../components/BlockContainer';
 
 
+
 const ItemPage: React.FC = () => {
 
 
@@ -22,6 +23,7 @@ const ItemPage: React.FC = () => {
       <BlockContainer>
          <HabitProfile />
       </BlockContainer >
+
       </>
    );
 }
