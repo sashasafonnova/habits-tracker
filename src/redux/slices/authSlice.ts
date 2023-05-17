@@ -38,8 +38,8 @@ export const fetchUserData = createAsyncThunk<UserData, fetchUserDataParams, { r
    const { path, ...fetchParams } = params;
 
    try {
-      const response = await axios.post<UserData>(path, { ...fetchParams })
-      return response.data
+      const {data} = await axios.post<UserData>(path, { ...fetchParams })
+      return data
    } catch (err: unknown) {
 
       if (err instanceof AxiosError && err.response){
@@ -53,7 +53,6 @@ export const fetchUserData = createAsyncThunk<UserData, fetchUserDataParams, { r
 
 
 export const fetchUserIsAuth = createAsyncThunk<UserData>('fetchIsAuth', async () => {
-
    const { data } = await axios.get<UserData>('/account');
    return data;
 })
@@ -75,6 +74,7 @@ export const authSlice = createSlice({
       
       logOut: ((state) => {
          state.userData = null;
+         axios.interceptors.request.clear();
       }),
 
       clearFetchMessage : ((state) => {
@@ -88,6 +88,13 @@ export const authSlice = createSlice({
       builder.addCase(fetchUserData.fulfilled, (state, action: PayloadAction<UserData>) => {
          state.userData = action.payload;
          state.fetch.status = "loaded";
+         
+         if (action.payload.token){
+            axios.interceptors.request.use((config) => {
+               config.headers.Authorization = action.payload.token;
+               return config
+            })
+         } 
       })
 
       builder.addCase(fetchUserData.pending, (state) => {
@@ -97,6 +104,7 @@ export const authSlice = createSlice({
       builder.addCase(fetchUserData.rejected, (state, action) => {
          state.fetch.status = "error";
          state.userData = null;
+
 
          if (action.payload){
             state.fetch.message = action.payload;
@@ -111,9 +119,9 @@ export const authSlice = createSlice({
       })
 
       builder.addCase(fetchUserIsAuth.pending, (state) => {
+         state.fetch.message = null;
          state.fetch.status = "loading";
       })
-
 
       builder.addCase(fetchUserIsAuth.rejected, (state) => {
          state.fetch.status = "error";

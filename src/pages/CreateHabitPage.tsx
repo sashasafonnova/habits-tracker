@@ -1,10 +1,9 @@
 import React from 'react';
 
-
 import ArrowBack from '../components/ArrowBack';
 import BlockContainer from '../components/BlockContainer';
 import BlockTitle from '../components/BlockTitle';
-import { FormCreateHabit }  from '../modules/CreateHabit';
+import { CreateSection } from '../modules/CreateHabit/index';
 
 
 
@@ -26,7 +25,7 @@ const CreateHabitPage: React.FC = () => {
          </BlockContainer>  
 
          <BlockContainer>
-            <FormCreateHabit/>
+            <CreateSection/>
          </BlockContainer>
 
       </>

@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const FormSignIn: React.FC = () => {
 
-
+   
    const fetchMessage = useAppSelector(fetchMessageSelector);
    const navigate = useNavigate();
 
@@ -34,8 +34,7 @@ export const FormSignIn: React.FC = () => {
 
 
       if (fetchUserData.fulfilled.match(fetchResult)) {
-         const token = fetchResult.payload.token;
-         window.localStorage.setItem('token', JSON.stringify(token))
+         window.localStorage.setItem('token', fetchResult.payload.token)
          return navigate('/account');
       }
    }

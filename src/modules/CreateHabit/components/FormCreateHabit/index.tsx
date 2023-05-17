@@ -1,21 +1,26 @@
 import React from 'react';
 import styles from "./styles.module.css";
-import { categoryList } from './categoryList';
+import { categoryList } from '../../../../assets/categories/categoryList';
+import { useAppDispatch } from '../../../../hooks/redux-hooks';
+import { fetchCreateHabit } from '../../../../redux/slices/habitsSlice';
 
 
-interface ChooseCategory {
-   icon: string,
-   name: string
+interface FormCreateHabitProps {
+   setFormSend: (status: boolean) => void
 }
 
+export const FormCreateHabit: React.FC<FormCreateHabitProps> = ({ setFormSend } ) => {
 
-export const FormCreateHabit: React.FC = () => {
+   const dispatch = useAppDispatch();
 
-   
    const [openCategory, setOpenCategory] = React.useState(false);
-   const [category, setCategory] = React.useState<ChooseCategory | null>(null);
+   const [category, setCategory] = React.useState<string>('');
+   const [title, setTitle] = React.useState<string>('');
+   const [habitLength, setHabitLength] = React.useState<string>('10');
+
    const menuList = React.useRef(null);
    const menuBtn = React.useRef(null);
+
 
 
    React.useEffect(() => {
@@ -32,51 +37,89 @@ export const FormCreateHabit: React.FC = () => {
 
 
 
-   const onClickCategotyItem = (icon: string, name: string) => {
+   const onClickCategotyItem = (name: string) => {
       setOpenCategory(!openCategory);
-      setCategory({
-         icon,
-         name,
-      })
+      setCategory(name)
    }
 
+
+   const dataCreate = () => {
+      const date = new Date().toLocaleString();
+      return date;
+   }
+
+
+
+   const onSubmit = (event: React.FormEvent) => {
+      event.preventDefault();
+      const dateCreated = dataCreate();
+
+      dispatch(fetchCreateHabit({
+         dateCreated,
+         lastUpdated: dateCreated,
+         category,
+         title,
+         habitLength: Number(habitLength),
+      }))
+      setFormSend(true)
+
+   }
+
+ 
    return (
-      <form className={styles.form}>
+      <form onSubmit={(onSubmit)}>
          <div className={styles.category}>
             <div className={styles.categoryBtn} onClick={() => setOpenCategory(!openCategory)} ref={menuBtn}>
-               {category ? (
-               <div className={styles.categoryItem}>
-                  <img src={category.icon} className={styles.categoryIcon} alt={category.name} />
-                  <span>{category.name}</span>
-               </div>) : 'Выбрать категорию'}
+               {category ? categoryList.map(item => {
+                  if (item.name === category) {
+                     return (
+                        <div className={styles.categoryItem} key={item.name}>
+                           <img src={item.icon} className={styles.categoryIcon} alt={item.name} />
+                           <span>{item.name}</span>
+                        </div>
+                     )
+                  }
+               }) : 'Выбрать категорию'}
             </div>
-            {openCategory && (                                                                                                                                                                                                                                                                                                                                                                                                                         
+            {openCategory && (
+
                <ul className={styles.categoryList} ref={menuList}>
-                  {categoryList.map(category => (
-                     <li className={styles.categoryItem} key={category.name} onClick={() => onClickCategotyItem(category.icon, category.name)}>
-                     <img src={category.icon} className={styles.categoryIcon} alt={category.name} />
-                     <span>{category.name}</span>
-                  </li>))}
-               </ul>)}
+                  {categoryList.map(item => (
+                     <li className={styles.categoryItem} key={item.name} onClick={() => onClickCategotyItem(item.name)}>
+                        <img src={item.icon} className={styles.categoryIcon} alt={item.name} />
+                        <span>{item.name}</span>
+                     </li>))}
+               </ul>
+            )}
          </div>
          <div className={styles.name}>
             <label className="dsp-none" htmlFor="habitName"></label>
-            <textarea 
-               onClick={() => console.log("categoryListIsOpen")}
+            <textarea
+               value={title}
                className={styles.inputName}
-               id="habitName" 
-               placeholder="Что будем делать?"/>
+               id="habitName"
+               placeholder="Что будем делать?"
+               onChange={(event) => setTitle(event.target.value)}
+            />
          </div>
          <p className={styles.daysLabel}>Количество дней</p>
          <div className={styles.days}>
-            <input type="radio" name="Продолжительность"/>
-            <label htmlFor="">10</label>
-            <input type="radio" name="Продолжительность" />
-            <label htmlFor="">20</label>
-            <input type="radio" name="Продолжительность" />
-            <label htmlFor="">30</label>
-            <input type="radio" name="Продолжительность" />
-            <label htmlFor="">60</label>
+            <label className={styles.daysLabel}>
+               <input className={styles.daysInput} type="radio" value="10" name="habitLength" checked={habitLength === '10' ? true : false} onChange={(event) => setHabitLength(event.target.value)} />
+               10
+            </label>
+            <label className={styles.daysLabel}>
+               <input className={styles.daysInput} type="radio" value="20" name="habitLength" checked={habitLength === '20' ? true : false} onChange={(event) => setHabitLength(event.target.value)} />
+               20
+            </label>
+            <label className={styles.daysLabel}>
+               <input className={styles.daysInput} type="radio" value="30" name="habitLength" checked={habitLength === '30' ? true : false} onChange={(event) => setHabitLength(event.target.value)} />
+               30
+            </label>
+            <label className={styles.daysLabel}>
+               <input className={styles.daysInput} type="radio" value="60" name="habitLength" checked={habitLength === '60' ? true : false} onChange={(event) => setHabitLength(event.target.value)} />
+               60
+            </label>
          </div>
          <button className={styles.btnSubmit}>Создать</button>
       </form>

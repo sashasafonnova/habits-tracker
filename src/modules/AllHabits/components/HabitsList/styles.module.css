@@ -1,23 +1,25 @@
-
-
 .list {
+   padding: 0px 0px 100px;
+}
+
+
+.listContent {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    gap: 30px;
-   padding: 0px 0px 100px;
 }
 
 
 
 @media (max-width: 890px) {
-   .list {
+   .listContent {
       grid-template-columns: repeat(2, 1fr);
    }
 }
 
 
 @media (max-width: 590px) {
-   .list {
+   .listContent {
       grid-template-columns: 1fr;
    }
 }

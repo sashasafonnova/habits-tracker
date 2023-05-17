@@ -18,16 +18,15 @@ import RegistrationPage from './pages/RegistrationPage';
 import PrivateRoutes from './utils/router/PrivateRoutes';
 import PublicRoutes from './utils/router/PublicRouter';
 import { Loader } from './components/Loader';
-
-
+import ModalNeedHelp from './modules/ModalNeedHelp';
 
 
 
 const App: React.FC = () => {
 
-
+  const [modalHelpOpen, setModalNeedOpen] = React.useState(false);
   const dispatch = useAppDispatch();
-  
+
   
 
   React.useEffect (() => {
@@ -36,6 +35,8 @@ const App: React.FC = () => {
       dispatch(fetchUserIsAuth())
     }
   }, [dispatch])
+
+
 
       
   const fetchStatus = useAppSelector(fetchStatusSelector);
@@ -68,7 +69,8 @@ const App: React.FC = () => {
           </Route>
 
         </Routes>    
-        <Footer />
+        <Footer setModalNeedOpen={setModalNeedOpen}/>
+        {modalHelpOpen && <ModalNeedHelp setModalNeedOpen={setModalNeedOpen}/>}
         {fetchStatus === 'loading' && <Loader/>}
       </div> 
 

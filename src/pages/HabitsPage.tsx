@@ -18,7 +18,6 @@ const HabitsPage: React.FC = () => {
             <BlockTitle title={"Мои привычки"} />
          </BlockContainer>
 
-
          <BlockContainer>
             <AddHabitBtn />
          </BlockContainer>
@@ -26,6 +25,8 @@ const HabitsPage: React.FC = () => {
          <BlockContainer>  
             <HabitsList/>
          </BlockContainer>
+
+       
 
       </>
    );

@@ -4,3 +4,17 @@
    gap: 5px;
    margin-bottom: 40px;
 }
+
+
+@media (max-width: 360px) {
+   .progressTrek {
+      grid-template-columns: repeat(8, 1fr);
+   }
+}
+
+
+@media (max-width: 320px) {
+   .progressTrek {
+      grid-template-columns: repeat(6, 1fr);
+   }
+}

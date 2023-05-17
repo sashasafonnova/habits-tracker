@@ -1,1 +1,1 @@
-export { HabitProfile } from "./components/HabitProfile";
+export { HabitSection } from "./components/HabitSection";

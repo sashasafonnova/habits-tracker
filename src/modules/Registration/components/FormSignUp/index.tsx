@@ -33,8 +33,7 @@ export const FormSignUp: React.FC = () => {
       }))
 
       if (fetchUserData.fulfilled.match(fetchResult)) {
-         const token = fetchResult.payload.token;
-         window.localStorage.setItem('token', JSON.stringify(token))
+         window.localStorage.setItem('token', fetchResult.payload.token)
          return navigate('/account');
       }
    }

@@ -1,0 +1,125 @@
+.block {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.8);
+   z-index: 20;
+}
+
+
+.window {
+   min-height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 30px;
+}
+
+
+
+.content {
+   padding: 50px;
+   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.10);
+   background-color: #fff;
+   border-radius: 5px;
+   font-size: 14px;
+   color: var(--title-color);
+   position: relative;   
+}
+
+
+.close {
+   position: absolute;
+   right: 10px;
+   top: 10px;
+   padding: 10px;
+   background: transparent;
+}
+
+
+
+.title {
+   font-size: 18px;
+   font-weight: 600;
+   margin-bottom: 30px;
+}
+
+.form {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+
+
+.inputContainer {
+   position: relative;
+   min-width: 100%;
+}
+
+
+
+.input {
+   padding: 16px;
+   background-color: #fff;
+   border-radius: 6px;
+   margin-bottom: 24px;
+   min-width: 100%;
+   border: 1px solid var(--item-border);
+}
+
+
+.inputError,
+.inputError:focus {
+   border: 1px solid red;
+}
+
+
+.input:focus {
+   border: 1px solid var(--decor-color-1);
+}
+
+
+
+
+
+.btnSubmit {
+   padding: 15px 30px;
+   border-radius: 6px;
+   background-color: var(--decor-color-1);
+   color: #fff;
+   font-weight: 600;
+}
+
+
+
+
+.error {
+   position: absolute;
+   bottom: 6px;
+   left: 16px;
+   color: red;
+   font-size: 10px;
+}
+
+
+
+
+
+
+@media (max-width: 480px) {
+   .content {
+         padding: 50px 50px 50px 30px;
+   }
+}
+
+@media (max-width: 480px) {
+   .content {
+      padding: 50px 40px 50px 20px;
+   }
+}
+
+
+
+
+

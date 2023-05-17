@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { Link } from 'react-router-dom';
 import { UserData, logOut } from '../../../../redux/slices/authSlice';
 import { useAppDispatch } from '../../../../hooks/redux-hooks';
+import { clearHabits } from '../../../../redux/slices/habitsSlice';
 
 
 
@@ -18,9 +19,11 @@ export const Menu: React.FC<MenuProps> = ({ setMenuOpen, data } ) => {
 
    const onClickLogOut = () => {
       dispatch(logOut())
+      dispatch(clearHabits())
       setMenuOpen(false)
-      window.localStorage.removeItem('token');
+      window.localStorage.removeItem('token');      
    }
+
 
    return (
       <section className={styles.section} onClick={() => setMenuOpen(false)} >

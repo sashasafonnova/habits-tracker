@@ -1,0 +1,16 @@
+.block {
+   padding: 30px;
+   min-height: 600px;
+}
+
+
+
+.title {
+   color: inherit;
+   font-weight: 600;
+   font-size: 22px;
+   line-height: 1.2;
+}
+
+
+

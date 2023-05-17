@@ -1,1 +1,1 @@
-export { FormCreateHabit } from "./components/FormCreateHabit";
+export { CreateSection } from "./components/CreateSection";

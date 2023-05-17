@@ -9,7 +9,7 @@
 .category, .progress {
    display: flex;
    align-items: center;
-   margin-bottom: 20px;
+   margin-bottom: 30px;
 }
 
 
@@ -21,6 +21,8 @@
 
 
 .title {
+   display: block;
+   color: inherit;
    font-weight: 600;
    font-size: 22px;
    margin-bottom: 30px;
@@ -41,6 +43,7 @@
 
 
 .btnCheck {
+   display: inline-block;
    padding: 15px 30px;
    border-radius: 6px;
    background-color: #fff;
@@ -55,3 +58,5 @@
    color: #fff;
    border-color: var(--decor-color-1);
 }
+
+
